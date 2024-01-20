@@ -236,7 +236,7 @@ const Dashboard = () => {
                   required={true}
                   type="text"
                   id="company_name"
-                  title="Enter Company Name"
+                  title="Uploaded Company Name"
                 />
                 <TextInput
                   disabled={true}
@@ -247,7 +247,7 @@ const Dashboard = () => {
                   required={true}
                   type="number"
                   id="no_of_users"
-                  title="Enter Number Of Users"
+                  title="Uploaded Number Of Users"
                 />
                 <TextInput
                   disabled={true}
@@ -258,7 +258,7 @@ const Dashboard = () => {
                   }}
                   type="number"
                   id="no_of_products"
-                  title="Enter Number Of Products"
+                  title="Uploaded Number Of Products"
                 />
               </div>
               <div className="h-[65%] flex-1 flex justify-center flex-col">
@@ -268,7 +268,7 @@ const Dashboard = () => {
                   type="text"
                   id="percentage"
                   disabled={true}
-                  title="Enter Percentage"
+                  title="Uploaded Percentage"
                 />
                 {
                   <label className="form-control w-full max-w-xs">
