@@ -156,10 +156,10 @@ const Dashboard = () => {
   return (
     <div className="flex justify-center  w-screen bg-white p-4 py-12 sm:items-center">
       <div className=" bg-gray-100 container pt-10 px-3 sm:px-10 py-14">
-        <div className="flex">
+        <div className="flex justify-center sm:justify-normal flex-wrap">
           <h3 className="text-3xl m-2 my-4">Welcome {userEmail}</h3>
           {typeof file === "string" && userEmail === "testuser1@gmail.com" ? (
-            <img className="h-[150px]  object-contain" src={file} />
+            <img className="h-[90px]  object-contain" src={file} />
           ) : (
             <></>
           )}
