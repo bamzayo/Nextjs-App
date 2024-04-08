@@ -1,5 +1,44 @@
 /** @type {import('next').NextConfig} */
+
+const cspHeader = `
+    default-src 'self' identitytoolkit.googleapis.com securetoken.googleapis.com worldengines-7c1q.onrender.com;
+    script-src 'self' 'unsafe-eval' 'unsafe-inline' nonce-hdhdh apis.google.com ;
+    style-src 'self' 'unsafe-inline';
+    img-src 'self' lh3.googleusercontent.com worldengines.s3.amazonaws.com data: ;
+    font-src 'self';
+    connect-src 'self' identitytoolkit.googleapis.com securetoken.googleapis.com worldengines-7c1q.onrender.com;
+    object-src 'none';
+    base-uri 'self';
+    form-action 'self';
+    frame-ancestors 'none';
+    upgrade-insecure-requests;
+    frame-src 'self' freescreen-d793d.firebaseapp.com  ;
+`;
+
 const nextConfig = {
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: [
+          {
+            key: "X-Content-Type-Options",
+            value: "nosniff",
+          },
+          {
+            key: "X-Frame-Options",
+            value: "SAMEORIGIN",
+          },
+          { key: "X-XSS-Protection", value: "1" },
+
+          {
+            key: "Content-Security-Policy",
+            value: cspHeader.replace(/\n/g, ""),
+          },
+        ],
+      },
+    ];
+  },
   async redirects() {
     return [
       {

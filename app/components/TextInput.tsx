@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { ChangeEvent } from "react";
 
 type TextInputProps = {
   required: boolean;
@@ -8,7 +8,7 @@ type TextInputProps = {
   form: any;
   id: string;
   type: "text" | "password" | "number";
-  handleChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 };
 
 const TextInput = ({
